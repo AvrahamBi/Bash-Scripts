@@ -11,7 +11,7 @@ do
     if [ -d $f ];
         then continue
     fi
-    grep -ihw $word_ $f
+    grep -ihw $word_ $f 2>/dev/null
 done
 return
 }
@@ -25,7 +25,8 @@ _num=$4
 
 cd $_dirPath
 
-function21 $_fileType $_word
+function21 $_fileType $_word | awk -v LEN=$4 'NF>=LEN'
+
 if find -type d $(pwd) -maxdepth 1 2>/dev/null; then
     return
 fi
@@ -45,6 +46,7 @@ return
 
 if [ -z "${4}" ]; then
     echo Not enough parameters
+    exit
 fi
 
 function22 $1 $2 $3 $4
