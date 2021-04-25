@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# Avraham Bar Ilan 205937949
 
 # the user arguments
 dirPath=$1
@@ -9,17 +10,15 @@ word=$3
 if [ -z "${word}" ]; then
     echo Not enough parameters
 fi
-# cd to the given path
-cd $dirPath
 # iterates over the files with the given suffix
-for FILE in *.$fileType;
+for FILE in $(ls $dirPath/*.$fileType );
 do
     # if it is a directory 
     if [ -d $FILE ];
         then continue
     fi
     # print the line where the givn word is
-    grep -hw $word $FILE
+    grep -ihw $word $FILE
 done
 
 exit
