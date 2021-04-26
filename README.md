@@ -1,4 +1,4 @@
 # Bash-Scripts
-some Bash scripts 
+Some Bash scripts 
 
 These scripts are for files managment.
