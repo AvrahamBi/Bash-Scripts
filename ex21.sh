@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Avraham Bar Ilan 205937949
+# Avraham Bar Ilan
 
 # the user arguments
 dirPath=$1
